@@ -7,6 +7,7 @@ cabal-version: >= 1.10
 build-type: Simple
 homepage: https://github.com/ddssff/slowtext
 synopsis: Demonstrates that Text is 100x slower than String for some simple uses
+tested-with: GHC == 7.6.3, GHC == 7.8.4, GHC == 7.10.3, GHC == 8.0.1
 
 library
   default-language: Haskell2010
