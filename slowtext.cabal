@@ -1,0 +1,23 @@
+name: slowtext
+version: 1.0
+license: BSD3
+author: David Fox <dsf@seereason.com>
+category: Debug
+cabal-version: >= 1.10
+build-type: Simple
+homepage: https://github.com/ddssff/slowtext
+synopsis: Demonstrates that Text is 100x slower than String for some simple uses
+
+library
+  default-language: Haskell2010
+  ghc-Options: -O2
+  build-depends: base, deepseq, time, utf8-string
+  hs-source-dirs: .
+  exposed-modules: SlowText
+
+test-suite test
+  default-language: Haskell2010
+  type: exitcode-stdio-1.0
+  ghc-options: -O2
+  main-is: test.hs
+  build-depends: base, deepseq, time, text, bytestring, utf8-string
