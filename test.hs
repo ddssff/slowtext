@@ -9,8 +9,8 @@ import System.Exit
 main :: IO ()
 main = do
   t1 <- slowText' 10000000 "String" ("Hello" :: String)
-  t2 <- slowText' 10000 "ByteString" ("Hello" :: ByteString)
-  t3 <- slowText' 10000 "Text" ("Hello" :: Text)
+  t2 <- slowText' 50000 "ByteString" ("Hello" :: ByteString)
+  t3 <- slowText' 50000 "Text" ("Hello" :: Text)
   let ratios = [t2 / t1, t3 / t1]
   putStrLn ("# times slower than String: " ++ show ratios)
   exitWith $ case any (< 1.0) ratios of
